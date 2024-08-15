@@ -9,13 +9,13 @@
                             <strong>Thêm nhân viên</strong>
                         </div>
                         <div class="card-body card-block">
-                            <form action="/admin/category/addPersonnel" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="/admin/category/addPersonnel/<%= product.MaNhanVien %>" method="post"  class="form-horizontal">
                                 <div class="row form-group">
                                     <div class="col col-md-3">
                                         <label for="name" class="form-control-label">Tên nhân viên</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="HoTen" name="HoTen" placeholder="Tên nhân viên" class="form-control">
+                                        <input type="text" id="HoTen" name="HoTen" placeholder="Tên nhân viên" class="form-control" value="<%= product.HoTen %>">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -23,7 +23,7 @@
                                         <label for="price" class="form-control-label">Email</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="email" id="Email" name="Email" placeholder="email" class="form-control">
+                                        <input type="email" id="Email" name="Email" placeholder="email" class="form-control"  value="<%= product.Email %>">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -31,7 +31,7 @@
                                         <label for="price" class="form-control-label">Mật khẩu</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="password" id="MatKhau" name="MatKhau" placeholder="Mật khẩu" class="form-control">
+                                        <input type="password" id="MatKhau" name="MatKhau" placeholder="Mật khẩu" class="form-control"  value="<%= product.MatKhau %>">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -39,7 +39,7 @@
                                         <label for="price" class="form-control-label">SDT</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="SDT" name="SDT" placeholder="sdt" class="form-control">
+                                        <input type="text" id="SDT" name="SDT" placeholder="sdt" class="form-control"  value="<%= product.SDT %>">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -47,7 +47,7 @@
                                         <label for="select" class=" form-control-label">Chức vụ</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <select name="ChucVu" id="ChucVu" class="form-control">
+                                        <select name="ChucVu" id="ChucVu" class="form-control"  value="<%= product.ChucVu %>">
                                             <option value="Nhân viên">Nhân viên </option>
                                             <option value="Quản lí">Quản lí</option>
                                             
@@ -67,7 +67,7 @@
                                         <label for="dess" class="form-control-label">Lý lịch</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="LyLich" id="LyLich" rows="9" placeholder="Lý lịch" class="form-control"></textarea>
+                                        <textarea name="LyLich" id="LyLich" rows="9" placeholder="Lý lịch" class="form-control"> <%= product.LyLich %></textarea>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -76,8 +76,8 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <select name="Admin" id="Admin" class="form-control">
-                                            <option value="0">Admin</option>
-                                            <option value="1">user</option>
+                                            <option value="0" <%= product.Admin === 0 ? 'selected':'' %>>Admin</option>
+                                            <option value="1" <%= product.Admin ===1 ? 'selected':'' %>>user</option>
                                            
                                         </select>
                                     </div>

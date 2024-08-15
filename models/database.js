@@ -4,7 +4,7 @@ var db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'mysql',
-    database: 'asm_nodejs'
+    database: 'thi_nodejs'
 });
 db.connect(function (err) {
     if (err) throw err;

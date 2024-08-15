@@ -29,13 +29,9 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
   
 
-const clientRouter = require("./router/client");
-app.use('/',clientRouter);
-
-const adminRouter = require("./router/admin");
-app.use('/admin',adminRouter);
 const apiRouter = require('./router/api');
 app.use('/api',apiRouter);
+
 
 
 app.listen(port, () => {

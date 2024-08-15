@@ -25,43 +25,54 @@
                                                 <th>Email</th>
                                                 <th>Hình ảnh</th>
                                                 <th>SDT</th>
-                                               
+
                                                 <th>Chức vụ</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <% data.forEach(e=>{ %>
-                                            <tr class="tr-shadow">
-                                                <td><%= e.HoTen %></td>
-                                                <td>
-                                                    <span class="block-email"><%= e.Email %></span>
-                                                </td>
-                                                <td ><img src="/images/<%= e.Anh %>" alt="" width="70px" height="70px"></td>
-                                                <td><%= e.SDT %></td>
-                                               
-                                                <td class="desc"><%= e.ChucVu %></td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <a  href="/admin/category/deletePersonnel/<%= e.MaNhanVien %>" class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                    </a>
-                                                    
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <% }) %>
-                                           
+                                                <tr class="tr-shadow">
+                                                    <td>
+                                                        <%= e.HoTen %>
+                                                    </td>
+                                                    <td>
+                                                        <span class="block-email">
+                                                            <%= e.Email %>
+                                                        </span>
+                                                    </td>
+                                                    <td><img src="/images/<%= e.Anh %>" alt="" width="70px"
+                                                            height="70px"></td>
+                                                    <td>
+                                                        <%= e.SDT %>
+                                                    </td>
+
+                                                    <td class="desc">
+                                                        <%= e.ChucVu %>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="tooltip"
+                                                                data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                            </button>
+                                                            <a href="/admin/category/addPersonnel/<%= e.MaNhanVien %>"
+                                                                class="item" data-toggle="tooltip" data-placement="top"
+                                                                title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </a>
+                                                            <a href="/admin/category/deletePersonnel/<%= e.MaNhanVien %>"
+                                                                class="item" data-toggle="tooltip" data-placement="top"
+                                                                title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                                <% }) %>
+
                                         </tbody>
                                     </table>
                                 </div>

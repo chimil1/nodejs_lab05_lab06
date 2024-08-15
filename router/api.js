@@ -1,14 +1,16 @@
 const express =require('express');
 const apiController = require('../controller/api/categories');
-
 const router = express.Router();
+ //listuser
+router.get('/users',apiController.listUsers);
 
-router.get('/categories',apiController.listProduct)
+//add
+router.post('/users',apiController.add);
 
-router.delete('/categories/:MaSanPham',apiController.delete);
+router.get('/users/:id',apiController.getUsers);
 
-router.post('/categories/',apiController.add)
-
-router.put('/categories/:MaSanPham', apiController.update);
-
+//update
+router.put('/users/:id',apiController.update);
+//delete
+router.delete('/users/:id',apiController.delete)
 module.exports = router;
